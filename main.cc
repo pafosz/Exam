@@ -16,7 +16,7 @@ void print_vector(const vector<int>& vec) {
 
 int main() {
 
-	CyclicList<int> clst;
+	/*CyclicList<int> clst;
 	clst.push_back(1);
 	clst.push_back(2);
 	clst.push_back(3);
@@ -24,7 +24,7 @@ int main() {
 	clst.push_back(5);
 	clst.print();
 	clst.pop_back();
-	clst.print();
+	clst.print();*/
 
 	/*DoublyLinkedList<int> lst;
 
@@ -40,11 +40,12 @@ int main() {
 	lst = lst.includeSort();
 	lst.print();*/
 
-	/*vector<int> arr{ 4,3,5,1,2,6,12,9 };
+	vector<int> arr{ 4,3,5,1,2,6,12,9 };
+	vector<int> arr1{ 9,8,7,6,5,4,3,2,1 };
 	print_vector(arr);
-	binaryInsertionSort(arr);
-	print_vector(arr);*/
-
+	buubleSort(arr);
+	print_vector(arr);
+	
 
 	return 0;
 
