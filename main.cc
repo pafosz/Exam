@@ -42,9 +42,10 @@ int main() {
 
 	vector<int> arr{ 4,3,5,1,2,6,12,9 };
 	vector<int> arr1{ 9,8,7,6,5,4,3,2,1 };
-	print_vector(arr);
-	buubleSort(arr);
-	print_vector(arr);
+	cout << arr1.size() - 1 << endl;
+	print_vector(arr1);
+	quickSort(arr1);
+	print_vector(arr1);
 	
 
 	return 0;

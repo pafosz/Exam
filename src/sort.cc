@@ -71,3 +71,57 @@ void buubleSort(std::vector<int>& arr) {
 		}
 	}
 }
+
+// шейкерная сортировка
+void cocktailSort(std::vector<int>& arr) {
+	size_t size = arr.size();
+	size_t left = 0, right = size - 1;
+	size_t last_compare = 0;
+	while (left <= right) {		
+		for (size_t i = left; i < right; i++) {
+			if (arr[i + 1] < arr[i]) {
+				std::swap(arr[i + 1], arr[i]);
+				last_compare = i;
+			}
+		}
+		right = last_compare;
+		for (size_t i = right; i > left; i--) {
+			if (arr[i] < arr[i - 1]) {
+				std::swap(arr[i], arr[i - 1]);
+				last_compare = i;
+			}
+		}
+		left = last_compare;
+	}
+}
+
+// быстрая сортировка
+int partition(std::vector<int>& arr, int low, int high) {
+	int pivot = arr[low];
+	int left = low + 1, right = high;
+	while (left < right) {
+		while (left <= high && pivot >= arr[left]) {
+			left++;
+		}
+		while (right >= low && pivot < arr[right]) {
+			right--;
+		}
+		if (left < right) {
+			std::swap(arr[left], arr[right]);
+		}
+	}
+	std::swap(arr[low], arr[right]);
+	return right;
+}
+
+void quickSortHelper(std::vector<int>& arr, int low, int high) {
+	if (low < high) {
+		int pivotIndex = partition(arr, low, high);
+		quickSortHelper(arr, low, pivotIndex - 1);
+		quickSortHelper(arr, pivotIndex + 1, high);
+	}
+}
+
+void quickSort(std::vector<int>& arr) {
+	quickSortHelper(arr, 0, arr.size() - 1);
+}
