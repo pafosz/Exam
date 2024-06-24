@@ -5,6 +5,7 @@
 #include "src/stack.cc"
 #include "src/queue.cc"
 #include "src/sort.cc"
+#include "src/tree.cc"
 using namespace std;
 
 void print_vector(const vector<int>& vec) {
@@ -40,12 +41,26 @@ int main() {
 	lst = lst.includeSort();
 	lst.print();*/
 
-	vector<int> arr{ 4,3,5,1,2,6,12,9 };
+	/*vector<int> arr{ 4,3,5,1,2,6,12,9 };
 	vector<int> arr1{ 9,8,7,6,5,4,3,2,1 };
 	cout << arr1.size() - 1 << endl;
 	print_vector(arr1);
 	quickSort(arr1);
-	print_vector(arr1);
+	print_vector(arr1);*/
+
+	SearchTree<int> t;
+	t.add(30);
+	t.add(50);
+	t.add(15);
+	t.add(12);
+	t.add(16);
+	t.add(80);
+	t.add(74);
+	t.add(50);
+	t.print();
+	cout << t.contains(50);
+	t.erase(30);
+	t.print();
 	
 
 	return 0;

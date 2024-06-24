@@ -24,8 +24,10 @@ add_library(Exam SHARED
      "include/gueue.h"
      "src/queue.cc"
      "include/sort.h"
-     "src/sort.cc")
+     "src/sort.cc" 
+     "include/tree.h"
+     "src/tree.cc")
 target_include_directories(Exam PUBLIC "include")
 
-add_executable(main "main.cc" "include/stack.h" "include/gueue.h" "include/sort.h")
+add_executable(main "main.cc" "include/stack.h" "include/gueue.h" "include/sort.h" "include/tree.h")
 target_link_libraries(main Exam)

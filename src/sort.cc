@@ -125,3 +125,22 @@ void quickSortHelper(std::vector<int>& arr, int low, int high) {
 void quickSort(std::vector<int>& arr) {
 	quickSortHelper(arr, 0, arr.size() - 1);
 }
+
+// сортировка слиянием
+void merge(std::vector<int>& arr, const std::vector<int>& left, const std::vector<int>& right) {
+	size_t i = 0, j = 0, k = 0;
+	while (i < left.size() && j < right.size()) {
+		if (left[i] <= right[j]) {
+			arr[k++] = left[i++];
+		}
+		else {
+			arr[k++] = right[j++];
+		}
+	}
+	while (i < left.size()) {
+		arr[k++] = left[i++];
+	}
+	while (j < right.size()) {
+		arr[k++] = right[j++];
+	}
+}
